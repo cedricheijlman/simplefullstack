@@ -31,18 +31,7 @@ function App() {
 
   return (
     <div className="App">
-      {users &&
-        users.map((user) => {
-          return (
-            <div>
-              <h2>Name: {user.name}</h2>
-              <h3>Age: {user.age}</h3>
-              <p>Username: {user.username}</p>
-            </div>
-          );
-        })}
-
-      <div>
+      <div className="form">
         <input
           placeholder="name"
           onChange={(e) => {
@@ -61,8 +50,19 @@ function App() {
           }}
           placeholder="username"
         />
+        <h1>Users list</h1>
         <button onClick={createUser}>Create User</button>
       </div>
+      {users &&
+        users.map((user) => {
+          return (
+            <div className="user">
+              <h2>Name: {user.name}</h2>
+              <h3>Age: {user.age}</h3>
+              <p>Username: {user.username}</p>
+            </div>
+          );
+        })}
     </div>
   );
 }
