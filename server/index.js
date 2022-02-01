@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors());
 
 mongoose.connect(
-  `mongodb+srv://usernametest:${process.env.PASSWORD}@cluster0.7sjto.mongodb.net/merntest?retryWrites=true&w=majority`
+  `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.7sjto.mongodb.net/merntest?retryWrites=true&w=majority`
 );
 
 app.get("/getUsers", (req, res) => {
